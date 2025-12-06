@@ -1,0 +1,14 @@
+# IMPORTANT: This is a template file for key.properties
+# DO NOT commit this file to version control with real passwords!
+
+# Replace the values below with your actual keystore information
+storePassword=YOUR_KEYSTORE_PASSWORD
+keyPassword=YOUR_KEY_PASSWORD
+keyAlias=turnament
+storeFile=turnament-release-key.jks
+
+# Instructions:
+# 1. First, create the keystore using the command in the workflow
+# 2. Replace the placeholder passwords above with your actual passwords
+# 3. Save this file as "key.properties" in the android/ directory
+# 4. Make sure key.properties is added to .gitignore

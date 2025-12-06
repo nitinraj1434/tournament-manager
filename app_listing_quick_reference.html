@@ -1,0 +1,521 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quick Reference - App Listing Data</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            background: #0f0f23;
+            color: #e0e0e0;
+            padding: 20px;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            -webkit-text-fill-color: transparent;
+            font-size: 2.5em;
+            margin-bottom: 10px;
+        }
+
+        .subtitle {
+            color: #a0a0a0;
+            margin-bottom: 30px;
+        }
+
+        .section {
+            background: #1a1a2e;
+            border-radius: 12px;
+            padding: 25px;
+            margin-bottom: 20px;
+            border: 1px solid #2a2a3e;
+        }
+
+        .section h2 {
+            color: #667eea;
+            margin-bottom: 15px;
+            font-size: 1.5em;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+
+        .section h3 {
+            color: #a78bfa;
+            margin: 20px 0 10px 0;
+            font-size: 1.2em;
+        }
+
+        .copy-box {
+            background: #0f0f23;
+            border: 1px solid #667eea;
+            border-radius: 8px;
+            padding: 15px;
+            margin: 10px 0;
+            position: relative;
+        }
+
+        .copy-box pre {
+            white-space: pre-wrap;
+            word-wrap: break-word;
+            color: #e0e0e0;
+            margin: 0;
+        }
+
+        .copy-btn {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background: #667eea;
+            color: white;
+            border: none;
+            padding: 8px 15px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 0.9em;
+            transition: all 0.3s;
+        }
+
+        .copy-btn:hover {
+            background: #764ba2;
+            transform: translateY(-2px);
+        }
+
+        .copy-btn:active {
+            transform: translateY(0);
+        }
+
+        .label {
+            color: #a78bfa;
+            font-weight: bold;
+            margin-bottom: 5px;
+        }
+
+        .value {
+            color: #e0e0e0;
+            background: #0f0f23;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #2a2a3e;
+            margin-bottom: 15px;
+        }
+
+        .highlight {
+            background: linear-gradient(135deg, rgba(102, 126, 234, 0.2) 0%, rgba(118, 75, 162, 0.2) 100%);
+            border-left: 4px solid #667eea;
+            padding: 15px;
+            margin: 20px 0;
+            border-radius: 5px;
+        }
+
+        .file-info {
+            background: #2a2a3e;
+            padding: 10px;
+            border-radius: 5px;
+            margin: 10px 0;
+            font-family: 'Courier New', monospace;
+            color: #a0a0a0;
+        }
+
+        .step {
+            background: #0f0f23;
+            padding: 15px;
+            margin: 10px 0;
+            border-left: 3px solid #667eea;
+            border-radius: 5px;
+        }
+
+        .step-number {
+            background: #667eea;
+            color: white;
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 10px;
+            font-weight: bold;
+        }
+
+        ul {
+            margin: 10px 0 10px 30px;
+        }
+
+        li {
+            margin: 8px 0;
+        }
+
+        .emoji {
+            font-size: 1.2em;
+        }
+
+        .success {
+            color: #10b981;
+        }
+
+        .warning {
+            color: #f59e0b;
+        }
+
+        .error {
+            color: #ef4444;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <h1>🚀 Tournament Manager - App Listing Quick Reference</h1>
+        <p class="subtitle">Copy-paste ready data for Indus App Store submission</p>
+
+        <!-- App Basic Info -->
+        <div class="section">
+            <h2><span class="emoji">📱</span> App Basic Information</h2>
+
+            <div class="label">App Name (English):</div>
+            <div class="copy-box">
+                <button class="copy-btn" onclick="copyText(this)">Copy</button>
+                <pre>Tournament Manager - Gaming Tournaments</pre>
+            </div>
+
+            <div class="label">App Name (Hindi):</div>
+            <div class="copy-box">
+                <button class="copy-btn" onclick="copyText(this)">Copy</button>
+                <pre>टूर्नामेंट मैनेजर - गेमिंग प्रतियोगिता</pre>
+            </div>
+
+            <div class="label">Package Name:</div>
+            <div class="copy-box">
+                <button class="copy-btn" onclick="copyText(this)">Copy</button>
+                <pre>com.example.turnament</pre>
+            </div>
+
+            <div class="label">Version:</div>
+            <div class="value">1.0.1 (Build 2)</div>
+
+            <div class="label">Category:</div>
+            <div class="value">Games / Sports / Entertainment</div>
+
+            <div class="label">Content Rating:</div>
+            <div class="value">Teen (13+)</div>
+        </div>
+
+        <!-- Short Description -->
+        <div class="section">
+            <h2><span class="emoji">📝</span> Short Description (80 chars max)</h2>
+
+            <h3>English:</h3>
+            <div class="copy-box">
+                <button class="copy-btn" onclick="copyText(this)">Copy</button>
+                <pre>Organize and manage gaming tournaments with prizes and real-time updates</pre>
+            </div>
+
+            <h3>Hindi:</h3>
+            <div class="copy-box">
+                <button class="copy-btn" onclick="copyText(this)">Copy</button>
+                <pre>इनामों के साथ गेमिंग टूर्नामेंट आयोजित करें और प्रबंधित करें</pre>
+            </div>
+        </div>
+
+        <!-- Full Description English -->
+        <div class="section">
+            <h2><span class="emoji">📄</span> Full Description (English)</h2>
+            <div class="copy-box">
+                <button class="copy-btn" onclick="copyText(this)">Copy</button>
+                <pre>🏆 TOURNAMENT MANAGER - The Ultimate Gaming Tournament Platform
+
+Join the most exciting gaming tournaments and compete for real prizes! Tournament Manager is your all-in-one solution for organizing, participating, and managing esports competitions.
+
+✨ KEY FEATURES:
+
+🎮 TOURNAMENT PARTICIPATION
+• Browse and join live gaming tournaments
+• Multiple game support (BGMI, Free Fire, COD, and more)
+• Real-time leaderboards and rankings
+• Instant tournament updates
+
+💰 WALLET SYSTEM
+• Secure wallet for prize money
+• Multiple withdrawal options (UPI, Bank Transfer)
+• Instant deposit and withdrawal
+• Transaction history tracking
+
+📊 LIVE DASHBOARD
+• Track your tournament performance
+• View earnings and statistics
+• Monitor ongoing competitions
+• Personal game ID management
+
+🔔 REAL-TIME NOTIFICATIONS
+• Get instant updates on tournaments
+• Prize distribution alerts
+• Match schedule reminders
+• Wallet transaction notifications
+
+🔐 SECURE & RELIABLE
+• Google Sign-In authentication
+• Encrypted data storage
+• Secure payment processing
+• Privacy-focused design
+
+👥 USER-FRIENDLY INTERFACE
+• Beautiful modern design
+• Easy navigation
+• Quick tournament registration
+• Smooth performance
+
+🎯 PERFECT FOR:
+• Casual gamers looking for competition
+• Professional esports players
+• Tournament organizers
+• Gaming communities
+
+💎 WHY CHOOSE TOURNAMENT MANAGER?
+✅ Instant prize payouts
+✅ Fair play enforcement
+✅ 24/7 support
+✅ Regular tournaments
+✅ Multiple game support
+✅ User-friendly interface
+✅ Secure transactions
+
+Download now and start competing in exciting gaming tournaments! Win prizes, climb leaderboards, and become a champion!
+
+Made with ❤️ for Indian gamers!</pre>
+            </div>
+        </div>
+
+        <!-- Full Description Hindi -->
+        <div class="section">
+            <h2><span class="emoji">📄</span> Full Description (Hindi)</h2>
+            <div class="copy-box">
+                <button class="copy-btn" onclick="copyText(this)">Copy</button>
+                <pre>🏆 टूर्नामेंट मैनेजर - अंतिम गेमिंग टूर्नामेंट प्लेटफ़ॉर्म
+
+सबसे रोमांचक गेमिंग टूर्नामेंट में शामिल हों और असली पुरस्कारों के लिए प्रतिस्पर्धा करें!
+
+✨ मुख्य विशेषताएं:
+
+🎮 टूर्नामेंट भागीदारी
+• लाइव गेमिंग टूर्नामेंट ब्राउज़ करें और शामिल हों
+• कई गेम सपोर्ट (BGMI, Free Fire, COD, और अधिक)
+• रियल-टाइम लीडरबोर्ड और रैंकिंग
+• तुरंत टूर्नामेंट अपडेट
+
+💰 वॉलेट सिस्टम
+• पुरस्कार राशि के लिए सुरक्षित वॉलेट
+• कई निकासी विकल्प (UPI, बैंक ट्रांसफर)
+• तुरंत जमा और निकासी
+• लेनदेन इतिहास ट्रैकिंग
+
+📊 लाइव डैशबोर्ड
+• अपने टूर्नामेंट प्रदर्शन को ट्रैक करें
+• कमाई और आंकड़े देखें
+• चल रही प्रतियोगिताओं की निगरानी करें
+• व्यक्तिगत गेम आईडी प्रबंधन
+
+🔔 रियल-टाइम सूचनाएं
+• टूर्नामेंट पर तुरंत अपडेट प्राप्त करें
+• पुरस्कार वितरण अलर्ट
+• मैच शेड्यूल रिमाइंडर
+• वॉलेट लेनदेन सूचनाएं
+
+🔐 सुरक्षित और विश्वसनीय
+• Google साइन-इन प्रमाणीकरण
+• एन्क्रिप्टेड डेटा स्टोरेज
+• सुरक्षित भुगतान प्रसंस्करण
+• गोपनीयता-केंद्रित डिज़ाइन
+
+अभी डाउनलोड करें और रोमांचक गेमिंग टूर्नामेंट में प्रतिस्पर्धा शुरू करें!
+
+भारतीय गेमर्स के लिए ❤️ के साथ बनाया गया!</pre>
+            </div>
+        </div>
+
+        <!-- Keywords -->
+        <div class="section">
+            <h2><span class="emoji">🔍</span> Keywords / Tags</h2>
+            <div class="copy-box">
+                <button class="copy-btn" onclick="copyText(this)">Copy</button>
+                <pre>tournament, gaming, esports, BGMI, free fire, gaming competition, prizes, wallet, online tournament, mobile gaming, competitive gaming, टूर्नामेंट, गेमिंग, ईस्पोर्ट्स, प्रतियोगिता</pre>
+            </div>
+        </div>
+
+        <!-- Contact Info -->
+        <div class="section">
+            <h2><span class="emoji">📧</span> Contact Information</h2>
+
+            <div class="label">Support Email:</div>
+            <div class="copy-box">
+                <button class="copy-btn" onclick="copyText(this)">Copy</button>
+                <pre>support@tournamentmanager.com</pre>
+            </div>
+
+            <div class="label">Privacy Policy URL:</div>
+            <div class="copy-box">
+                <button class="copy-btn" onclick="copyText(this)">Copy</button>
+                <pre>https://yourwebsite.com/privacy-policy.html</pre>
+            </div>
+            <div class="warning">⚠️ Privacy policy ko pehle upload karein aur actual URL use karein!</div>
+        </div>
+
+        <!-- What's New -->
+        <div class="section">
+            <h2><span class="emoji">🎉</span> What's New (Version 1.0.1)</h2>
+            <div class="copy-box">
+                <button class="copy-btn" onclick="copyText(this)">Copy</button>
+                <pre>🎉 Initial Release Features:
+• Join exciting gaming tournaments
+• Secure wallet system with UPI/Bank transfers
+• Real-time notifications and updates
+• Beautiful user interface
+• Google Sign-In authentication
+• Live leaderboards and rankings</pre>
+            </div>
+        </div>
+
+        <!-- Content Rating Answers -->
+        <div class="section">
+            <h2><span class="emoji">⚠️</span> Content Rating Questionnaire Answers</h2>
+            <ul>
+                <li><strong>Violence:</strong> None / Minimal</li>
+                <li><strong>Language:</strong> None</li>
+                <li><strong>Sexual Content:</strong> None</li>
+                <li><strong>Gambling:</strong> No (skill-based gaming)</li>
+                <li><strong>User Interaction:</strong> Yes (usernames, profiles)</li>
+                <li><strong>In-App Purchases:</strong> Yes (wallet deposits)</li>
+                <li><strong>Location Sharing:</strong> No</li>
+                <li><strong>Personal Info Sharing:</strong> Yes (Google Sign-In, Name, Email)</li>
+            </ul>
+        </div>
+
+        <!-- Files to Upload -->
+        <div class="section">
+            <h2><span class="emoji">📁</span> Files to Upload</h2>
+
+            <div class="highlight">
+                <strong class="success">✅ Build File (AAB - Recommended):</strong>
+                <div class="file-info">build\app\outputs\bundle\release\app-release.aab</div>
+            </div>
+
+            <div class="highlight">
+                <strong class="success">✅ Alternative (APK):</strong>
+                <div class="file-info">build\app\outputs\flutter-apk\app-release.apk</div>
+            </div>
+
+            <h3>Graphics Assets:</h3>
+            <ul>
+                <li><strong>App Icon (512x512):</strong> Generated ✅</li>
+                <li><strong>Feature Graphic (1024x500):</strong> Generated ✅</li>
+                <li><strong>Screenshots:</strong> Aapko lene honge (minimum 2, maximum 8)</li>
+            </ul>
+        </div>
+
+        <!-- Step by Step Process -->
+        <div class="section">
+            <h2><span class="emoji">📋</span> Submission Steps</h2>
+
+            <div class="step">
+                <span class="step-number">1</span>
+                <strong>Login to Developer Console</strong>
+                <div>Apne credentials se login karein</div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">2</span>
+                <strong>Upload APK/AAB</strong>
+                <div>app-release.aab file upload karein</div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">3</span>
+                <strong>Fill App Details</strong>
+                <div>Is page se copy karke paste karein</div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">4</span>
+                <strong>Upload Graphics</strong>
+                <div>Icons aur screenshots upload karein</div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">5</span>
+                <strong>Content Rating</strong>
+                <div>Upar diye gaye answers use karein</div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">6</span>
+                <strong>Pricing & Distribution</strong>
+                <div>Free, India, In-App Purchases: Yes</div>
+            </div>
+
+            <div class="step">
+                <span class="step-number">7</span>
+                <strong>Review & Submit</strong>
+                <div>Sab check karein aur submit karein!</div>
+            </div>
+        </div>
+
+        <!-- Important Notes -->
+        <div class="section">
+            <h2><span class="emoji">💡</span> Important Notes</h2>
+            <div class="highlight">
+                <strong class="warning">⚠️ Before Submitting:</strong>
+                <ul>
+                    <li>Privacy policy URL correct hai ensure karein</li>
+                    <li>Screenshots ready ho</li>
+                    <li>AAB/APK built aur tested ho</li>
+                    <li>Support email valid ho</li>
+                </ul>
+            </div>
+
+            <div class="highlight">
+                <strong class="success">✅ After Submission:</strong>
+                <ul>
+                    <li>Review status regularly check karein</li>
+                    <li>Queries ka jaldi reply dein</li>
+                    <li>Documentation ready rakhein</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function copyText(button) {
+            const pre = button.nextElementSibling;
+            const text = pre.textContent;
+
+            navigator.clipboard.writeText(text).then(() => {
+                const originalText = button.textContent;
+                button.textContent = '✓ Copied!';
+                button.style.background = '#10b981';
+
+                setTimeout(() => {
+                    button.textContent = originalText;
+                    button.style.background = '#667eea';
+                }, 2000);
+            });
+        }
+    </script>
+</body>
+
+</html>

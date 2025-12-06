@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tournament Manager - Win Real Prizes</title>
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary: #39FF14;
+            --secondary: #00FFEF;
+            --bg-dark: #1A1A2E;
+            --bg-card: #16213E;
+            --text-light: #ffffff;
+            --text-dim: rgba(255, 255, 255, 0.7);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Outfit', sans-serif;
+        }
+
+        body {
+            background-color: var(--bg-dark);
+            color: var(--text-light);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        /* Navbar */
+        .navbar {
+            padding: 20px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 700;
+            background: linear-gradient(45deg, var(--primary), var(--secondary));
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        /* Hero Section */
+        .hero {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            padding: 60px 0;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 300px;
+            height: 300px;
+            background: var(--primary);
+            filter: blur(150px);
+            opacity: 0.15;
+            z-index: -1;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            line-height: 1.1;
+            margin-bottom: 20px;
+        }
+
+        .hero h1 span {
+            color: var(--primary);
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            color: var(--text-dim);
+            max-width: 600px;
+            margin-bottom: 40px;
+        }
+
+        .download-btn {
+            display: inline-flex;
+            align-items: center;
+            gap: 12px;
+            background: linear-gradient(45deg, var(--primary), #2ecc71);
+            color: #000;
+            font-weight: 700;
+            padding: 18px 40px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-size: 1.2rem;
+            transition: transform 0.3s, box-shadow 0.3s;
+            box-shadow: 0 10px 20px rgba(57, 255, 20, 0.2);
+        }
+
+        .download-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 15px 30px rgba(57, 255, 20, 0.3);
+        }
+
+        /* Badges */
+        .badges {
+            display: flex;
+            gap: 20px;
+            margin-top: 50px;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.05);
+            padding: 10px 20px;
+            border-radius: 20px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .badge i {
+            color: var(--secondary);
+        }
+
+        /* Features */
+        .features {
+            padding: 80px 0;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 60px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 30px;
+        }
+
+        .card {
+            background: var(--bg-card);
+            padding: 30px;
+            border-radius: 20px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+            transition: transform 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            border-color: var(--primary);
+        }
+
+        .card-icon {
+            width: 60px;
+            height: 60px;
+            background: rgba(57, 255, 20, 0.1);
+            border-radius: 15px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+
+        .card-icon i {
+            font-size: 24px;
+            color: var(--primary);
+        }
+
+        .card h3 {
+            margin-bottom: 10px;
+            font-size: 1.4rem;
+        }
+
+        .card p {
+            color: var(--text-dim);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding: 40px 0;
+            margin-top: 60px;
+            text-align: center;
+            color: var(--text-dim);
+        }
+
+        .footer-links {
+            margin-bottom: 20px;
+        }
+
+        .footer-links a {
+            color: var(--text-light);
+            text-decoration: none;
+            margin: 0 15px;
+        }
+
+        .footer-links a:hover {
+            color: var(--primary);
+        }
+
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <!-- Navbar -->
+        <nav class="navbar">
+            <div class="logo">TOURNAMENT MANAGER</div>
+            <a href="mailto:support@tournamentmanager.com"
+                style="color: var(--text-light); text-decoration: none;">Support</a>
+        </nav>
+
+        <!-- Hero -->
+        <main class="hero">
+            <h1>Compete, Win, <br><span>Repeat.</span></h1>
+            <p>The ultimate skill-based gaming platform. Join tournaments for BGMI, FreeFire, and more. Compete with the
+                best and win real rewards.</p>
+
+            <a href="turnament.apk" class="download-btn">
+                <i class="fab fa-android"></i> Download App
+            </a>
+
+            <div class="badges">
+                <div class="badge">
+                    <i class="fas fa-shield-alt"></i> 100% Skill Based
+                </div>
+                <div class="badge">
+                    <i class="fas fa-lock"></i> Secure & Safe
+                </div>
+                <div class="badge">
+                    <i class="fas fa-bolt"></i> Instant Withdrawals
+                </div>
+            </div>
+        </main>
+
+        <!-- Features -->
+        <section class="features">
+            <h2 class="section-title">Why Play With Us?</h2>
+            <div class="grid">
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-gamepad"></i></div>
+                    <h3>Multi-Game Support</h3>
+                    <p>Participate in tournaments for your favorite games like BGMI, Free Fire, and COD Mobile.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-trophy"></i></div>
+                    <h3>Real Rewards</h3>
+                    <p>Showcase your skills and win real cash prizes. The better you play, the more you win.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-wallet"></i></div>
+                    <h3>Instant Payouts</h3>
+                    <p>Secure wallet system with instant withdrawals via UPI and Bank Transfer.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-users"></i></div>
+                    <h3>Active Community</h3>
+                    <p>Join thousands of gamers, chat, track leaderboards, and build your reputation.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-check-circle"></i></div>
+                    <h3>Fair Play Guarantee</h3>
+                    <p>Advanced anti-cheat measures and strict verifiable skill-based matchmaking.</p>
+                </div>
+                <div class="card">
+                    <div class="card-icon"><i class="fas fa-robot"></i></div>
+                    <h3>24/7 Support</h3>
+                    <p>Our dedicated support team is always available to help you with any issues.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <div class="footer-links">
+                <a href="privacy-policy.html">Privacy Policy</a>
+                <a href="terms.html">Terms of Service</a>
+                <a href="mailto:support@tournamentmanager.com">Contact Us</a>
+            </div>
+            <p>&copy; 2025 Tournament Manager. Not affiliated with any game developers.</p>
+            <p style="font-size: 0.8rem; margin-top: 10px; opacity: 0.5;">
+                Disclaimer: This platform involves real money gaming. Not available in Assam, Odisha, Nagaland, Sikkim,
+                Telangana, Andhra Pradesh and Tamil Nadu. 18+ Only.
+            </p>
+        </footer>
+    </div>
+</body>
+
+</html>
