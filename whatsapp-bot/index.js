@@ -46,6 +46,15 @@ app.listen(port, () => {
     console.log(`[SERVER] listening on port ${port}`);
 });
 
+// DNS Debugging for Hugging Face
+const dns = require('dns');
+setInterval(() => {
+    dns.lookup('web.whatsapp.com', (err, address) => {
+        if (err) console.error('[DNS DEBUG] Failed to resolve web.whatsapp.com:', err.message);
+        else console.log('[DNS DEBUG] Resolved web.whatsapp.com to:', address);
+    });
+}, 60000); // Check every 1 minute
+
 // Initialize Firebase Admin
 let serviceAccount;
 
@@ -73,6 +82,7 @@ const ADMIN_NUMBER = process.env.ADMIN_NUMBER || '+919798365598';
 const client = new Client({
     authStrategy: new LocalAuth(),
     puppeteer: {
+        executablePath: '/usr/bin/google-chrome-stable',
         args: [
             '--no-sandbox',
             '--disable-setuid-sandbox',
@@ -80,8 +90,10 @@ const client = new Client({
             '--disable-accelerated-2d-canvas',
             '--no-first-run',
             '--no-zygote',
-            '--single-process', // <- Reduces memory usage significantly
-            '--disable-gpu'
+            '--single-process',
+            '--disable-gpu',
+            '--js-flags="--max-old-space-size=512"', // Limit memory
+            '--dns-prefetch-disable' // Help with DNS issues
         ],
         headless: true
     }
