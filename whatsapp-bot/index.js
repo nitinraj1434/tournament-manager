@@ -7,7 +7,7 @@ require('dotenv').config();
 // Initialize Express for Render/Railway Port Binding
 const express = require('express');
 const app = express();
-const port = process.env.PORT || 8080;
+const port = process.env.PORT || 7860;
 
 // Global state for Pairing Code (for Render Web View)
 let currentPairingCode = null;
