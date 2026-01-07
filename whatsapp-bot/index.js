@@ -47,11 +47,24 @@ app.listen(port, () => {
 });
 
 // Initialize Firebase Admin
-const serviceAccount = require("./serviceAccountKey.json");
-admin.initializeApp({
-    credential: admin.credential.cert(serviceAccount),
-    // databaseURL: "https://harsh-b7193-default-rtdb.firebaseio.com" // RTDB not needed for Firestore
-});
+let serviceAccount;
+
+try {
+    if (process.env.FIREBASE_SERVICE_ACCOUNT) {
+        console.log('[FIREBASE] Using service account from Environment Variable');
+        serviceAccount = JSON.parse(process.env.FIREBASE_SERVICE_ACCOUNT);
+    } else {
+        console.log('[FIREBASE] Using service account from serviceAccountKey.json');
+        serviceAccount = require("./serviceAccountKey.json");
+    }
+
+    admin.initializeApp({
+        credential: admin.credential.cert(serviceAccount)
+    });
+} catch (error) {
+    console.error('[FIREBASE] Initialization error:', error.message);
+    process.exit(1); // Exit if firebase fails
+}
 const db = admin.firestore();
 
 // Admin configuration
