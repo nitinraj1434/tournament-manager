@@ -68,7 +68,7 @@ try {
 const db = admin.firestore();
 
 // Admin configuration
-const ADMIN_NUMBER = '+919798365598'; // Admin number from profile screenshot
+const ADMIN_NUMBER = process.env.ADMIN_NUMBER || '+919798365598';
 
 const client = new Client({
     authStrategy: new LocalAuth(),
